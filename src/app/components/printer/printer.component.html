@@ -1,0 +1,27 @@
+<div (click)="test()" >
+    <div class="card card-chart">
+        <div class="card-header card-header-info" [ngClass]="{'card-header-success': printState=='Printing'}">
+            <div class="ct-chart" id="dailySalesChart">
+                <x-chartist [type]="type" [data]="data" [options]="options" [events]="events"></x-chartist>
+            </div>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">{{config.name}}</h4>
+            <p class="card-category">
+                <span class="text-primary"><i class="fa fa-long-arrow-up"></i> Status: </span> {{printState}}</p>
+            <p class="card-category ellipsis">
+                <span class="text-primary"><i class="fa fa-long-arrow-up"></i> File: </span> {{currentFile}}</p>
+            <p class="card-category">
+                <span class="text-primary"><i class="fa fa-long-arrow-up"></i> Time: </span>
+                {{convertTime(progress.printTime)}} / {{convertTime(progress.printTimeLeft)}}</p>
+        </div>
+        <div class="card-body">
+
+            <div style="width: 100%; text-align: center"> <span class=""><i
+                        class="fa fa-long-arrow-up"></i>{{formatPercent(progress.completion)}}</span> </div>
+
+            <ngb-progressbar [value]="progress.completion" type="success" [striped]="true" [animated]="true"></ngb-progressbar>
+
+        </div>
+    </div>
+</div>

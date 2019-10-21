@@ -1,0 +1,62 @@
+<div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-info">
+                            <h4 class="card-title ">File List</h4>
+                            <p class="card-category">Octoprint lists {{list.files.length}} files</p>
+                        </div>
+                        <div class="card-body" style="height: 70vh">
+                            <div class="table-responsive">
+                                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                                            <div *cdkVirtualFor="let item of list.files" class="example-item">
+                                                <span>{{item.display}}</span>
+                                                <div style="float: right; position: relative">
+                                                    <div><i class="mdi mdi-printer mdi-button"></i></div>
+                                                    <div><i class="mdi mdi-close mdi-button"></i></div>
+                                                </div>
+                                            </div>
+                                        </cdk-virtual-scroll-viewport>
+                                <!-- <table class="table">
+                                    <thead class=" text-primary">
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Print Time
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let f of list.files">
+                                            <td>
+                                                {{f.display}}
+                                            </td>
+                                            <td>
+                                                {{f.date}}
+                                            </td>
+                                            <td>
+                                                {{f.gcodeAnalysis.estimatedPrintTime}}
+                                            </td>
+                                            <td class="text-primary">
+                                                <button>Print</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+               
+      </div>
+      

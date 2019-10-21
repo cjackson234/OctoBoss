@@ -1,0 +1,29 @@
+<mat-drawer-container class="example-container mat-typography nav-wrap" autosize>
+    <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+        <!-- <button mat-mini-fab (click)="isExpanded = !isExpanded" color="primary" style="margin: 10px;">
+            <mat-icon aria-label="Menu">menu</mat-icon>
+        </button> -->
+        <mat-nav-list>
+            <mat-list-item class="nav-item" [routerLink]="['/printer/all']">
+                <i class="mdi mdi-printer-3d mdi-button"></i>
+                <h4 mat-line *ngIf="isExpanded">Management A</h4>
+            </mat-list-item>
+            <mat-list-item (click)="goto('files')">
+                <i class="mdi mdi-arrow-all mdi-button"></i>
+                <h4 mat-line *ngIf="isExpanded">Management B</h4>
+            </mat-list-item>
+            <mat-list-item>
+                    <i class="mdi mdi-printer-3d mdi-button"></i>
+                <h4 mat-line *ngIf="isExpanded">Management C</h4>
+            </mat-list-item>
+            <mat-list-item>
+                    <i class="mdi mdi-printer-3d mdi-button"></i>
+                <h4 mat-line *ngIf="isExpanded">Management X</h4>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+
+    <div class="main-panel main-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { OctoprintService } from '../../services/octoprint.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { PrinterFiles } from '../../models/printer-files';
 
 @Component({
   selector: 'app-printer-file-list',

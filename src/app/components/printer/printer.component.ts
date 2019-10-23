@@ -9,6 +9,7 @@ import { OctoprintService } from '../../services/octoprint.service';
 import { Subscription, Observable, timer } from 'rxjs';
 import { PrinterConfig } from '../../models/printerConfig';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'printer',
@@ -64,7 +65,7 @@ export class PrinterComponent implements OnInit {
         let labels = [];
 
         newData.temperature.history.forEach(h => {
-          labels.push(this.convertTimeToMinuts(h.time));
+          labels.push(this.convertTimeToMinutes(h.time));
           bed.push(h.bed.actual);
           tool.push(h.tool0.actual);
         });
@@ -117,7 +118,7 @@ export class PrinterComponent implements OnInit {
     return formattedTime;
   }
 
-  convertTimeToMinuts(unixtime) {
+  convertTimeToMinutes(unixtime) {
     //day
     var days = Math.floor(unixtime / 86400);
     unixtime -= days * 86400;

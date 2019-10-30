@@ -18,7 +18,7 @@ export class OctoprintService {
   }
 
   getStatus(url, key) {
-    return this.httpClient.get(`${url}/api/printer?apikey=${key}&history=true&limit=6`).subscribe((d) => {
+    return this.httpClient.get(`${url}/api/printer?apikey=${key}&history=true&limit=10`).subscribe((d) => {
       this.statusUpdated.emit({ data: d, key: key });
     });
   }

@@ -70,7 +70,7 @@ export class PrinterComponent implements OnInit {
           tool.push(h.tool0.actual);
         });
 
-        console.log(labels);
+        // console.log(labels);
 
         this.data.series = [bed, tool];
         this.data.labels = labels;
@@ -82,7 +82,7 @@ export class PrinterComponent implements OnInit {
     this.jobSub = this.octoprintService.jobUpdated.subscribe((update) => {
       if (update.key === this.config.key) {
         let newData: PrintJob.RootObject = update.data;
-        console.log(newData)
+        // console.log(newData)
         this.currentFile = newData.job.file.name;
         this.progress = newData.progress;
       }
@@ -100,7 +100,15 @@ export class PrinterComponent implements OnInit {
     this.octoprintService.getJobInfo(this.config.url, this.config.key);
   }
 
+  convertDateComplete(unixtime){
+    var t = moment().local().add(unixtime,'seconds');
+    return t.format('llll');
+    
+  }
+
   convertTime(unixtime) {
+    
+
     //day
     var days = Math.floor(unixtime / 86400);
     unixtime -= days * 86400;

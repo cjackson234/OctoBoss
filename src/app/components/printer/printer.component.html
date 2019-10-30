@@ -14,6 +14,9 @@
             <p class="card-category">
                 <span class="text-primary"><i class="fa fa-long-arrow-up"></i> Time: </span>
                 {{convertTime(progress.printTime)}} / {{convertTime(progress.printTimeLeft)}}</p>
+            <p class="card-category">
+                    <span class="text-primary"><i class="fa fa-long-arrow-up"></i> Complete On: </span>
+                    {{convertDateComplete(progress.printTimeLeft)}}</p>
         </div>
         <div class="card-body">
 
